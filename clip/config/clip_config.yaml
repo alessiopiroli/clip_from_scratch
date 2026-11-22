@@ -1,0 +1,41 @@
+DATA:
+  root_dir: 'data'
+  dataset: 'flickr'
+  train_images_names_file: "Flickr_8k.trainImages.txt"
+  dev_images_names_file: "Flickr_8k.devImages.txt"
+  test_images_names_file: "Flickr_8k.testImages.txt"
+  all_captions_file: "Flickr8k.token.txt"
+  img_dir: "Flicker8k_Dataset"
+  img_size: 224
+
+TOKENIZER:
+  vocab_size: 500
+  tokenizer_data_file: "tokenizer_data.json"
+
+MODEL:
+  joint_dim: 256
+  GPT:
+    context_size: 128
+    n_blocks: 2
+    embed_dim: 128
+    n_heads: 4
+    dropout_rate: 0.2
+  VIT:
+    PRETRAINED:
+      pretrained: false
+      freeze: true
+      name: 'vit_b_16'
+    embed_dim: 128
+    n_blocks: 2
+    patch_size: 8
+    n_heads: 4
+
+TRAINER:
+  n_epochs: 1000
+  batch_size: 128
+  lr: 3e-4
+
+LOGGING:
+  logging_dir: "artifacts/logs"
+  media_dir: "artifacts/media"
+  trained_model: "artifacts/model/clip.pth"
