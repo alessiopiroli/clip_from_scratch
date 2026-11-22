@@ -3,3 +3,4 @@ data/
 *__pycache__
 artifacts/logs
 artifacts/model
+*__init__.py
