@@ -1,0 +1,9 @@
+torch
+pytest
+easydict
+pyyaml
+tensorboard
+torchvision
+transformers
+numpy
+torchinfo
